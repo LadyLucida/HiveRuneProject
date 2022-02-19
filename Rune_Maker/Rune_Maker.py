@@ -6,6 +6,7 @@ import pandas as pd
 
 
 def fix(folder):
+    dir = "../Parts/Full/"
     name = os.listdir(dir + folder)
     name = sorted(name)
     name = [s.strip('.png') for s in name] # remove the png from the string borders
@@ -206,7 +207,7 @@ real_bot = [
 
 #loads in the known hive runes
 colnames = ['tops', 'mids', 'bots']
-data = pd.read_csv('Hive_Rune_Database.csv', names=colnames)
+data = pd.read_csv('../Hive_Rune_Database.csv', names=colnames)
 
 variant = Variant(data)
 
