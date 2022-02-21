@@ -127,10 +127,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-Rune_Maker/Hypothetical/*.png
-Rune_Maker/Imaginary/*.png
-Rune_Maker/Real/*.png
-Rune_Maker/Variant/*.png
+Rune_Maker/Full/Hypothetical/*.png
+Rune_Maker/Full/Imaginary/*.png
+Rune_Maker/Full/Real/*.png
+Rune_Maker/Full/Variant/*.png
 
 Parts/Full/Data
 Parts/Half/

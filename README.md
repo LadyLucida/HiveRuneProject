@@ -10,7 +10,7 @@ The Part Maker generates the vertically flipped and bottom parts of runes from t
 This is the bread and butter of the Hive Rune Project. Using the parts generated from the Part Maker and the Hive Rune Database, we can generate Hive Runes. Why you may ask? Because currently (before the release of Witch Queen), there isn't enough runes for the Hive Language to be a full functioning language, as there are only 53 symbols. The database will be updated with new runes frequently, and the statistics will change as well as new runes show up. To run this script run the following:
 
 ```
-cd Rune_Maker
+cd Rune_Maker/
 python Rune_Maker.py
 ```
 

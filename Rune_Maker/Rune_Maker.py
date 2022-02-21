@@ -205,6 +205,13 @@ real_bot = [
     'Bot_61'  
 ]
 
+dot_top = ['Top_06', 'Top_09', 'Top_27']
+
+dot_bot = ['Bot_06', 'Bot_09', 'Bot_27']
+
+line_top = []
+
+
 #loads in the known hive runes
 colnames = ['tops', 'mids', 'bots']
 data = pd.read_csv('../Hive_Rune_Database.csv', names=colnames)
@@ -229,7 +236,7 @@ for i in range(len(top)):
                 print(top[i],mid[j],bot[k])
                 
                 if ((data['tops'] == top[i]) & (data['mids'] == mid[j]) & (data['bots'] == bot[k])).any() == True:
-                    save_dir = 'Hypothetical/Real/'
+                    save_dir = 'Full/Real/'
                     real = color_change(img,real = True)
                     cv2.imwrite( save_dir + save_name,real)
                     print("This rune is real")
@@ -264,7 +271,7 @@ for i in range(len(top)):
                 if variant_search in variant:
                     print("This is a Variant Rune")
                     flip = color_change(img,flip=True)
-                    save_dir = 'Variant/'
+                    save_dir = 'Full/Variant/'
                     cv2.imwrite( save_dir + save_name,flip)
                 
                 elif top[i] in real_top and mid[j] in real_mid and bot[k] in real_bot:
@@ -273,7 +280,7 @@ for i in range(len(top)):
                     else:
                         print("This is a Hypothetical Rune")
                         hypo = color_change(img,hypo=True)      
-                        save_dir = 'Hypothetical/'
+                        save_dir = 'Full/Hypothetical/'
                         cv2.imwrite( save_dir + save_name,hypo)
             
                 #if this isn't in the database and the parts are fake
@@ -283,5 +290,5 @@ for i in range(len(top)):
                     else:
                         print("This is a Imaginary Rune")
                         imag = color_change(img,imag=True)      
-                        save_dir = 'Imaginary/'
+                        save_dir = 'Full/Imaginary/'
                         cv2.imwrite( save_dir + save_name,imag)
