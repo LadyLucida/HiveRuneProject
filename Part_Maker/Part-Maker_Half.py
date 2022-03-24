@@ -25,7 +25,7 @@ print(num)
 
 #loads in the known hive runes
 colnames = ['tops', 'mids', 'bottoms']
-data = pandas.read_csv('../Hive_Rune_Database.csv', names=colnames)
+data = pandas.read_csv('../Hive_Rune_Database_Half.csv', names=colnames)
 
 known = data.tops.tolist()
 known.extend(data.bottoms.tolist())

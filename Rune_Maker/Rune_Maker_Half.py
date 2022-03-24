@@ -6,7 +6,7 @@ import pandas as pd
 
 
 def fix(folder):
-    dir = "../Parts/Full/"
+    dir = "../Parts/Half/"
     name = os.listdir(dir + folder)
     name = sorted(name)
     name = [s.strip('.png') for s in name] # remove the png from the string borders
@@ -72,25 +72,16 @@ def Variant(data):
         bnum = int(bot.rpartition('_')[-1])
         
         if mnum == 1:
-            mnew = 1
+            mnew = 4
         if mnum == 2:
-            mnew = 5
+            mnew = 2
         if mnum == 3:
             mnew = 3
         if mnum == 4:
-            mnew = 4
-        if mnum == 5:
-            mnew = 2
-        if mnum == 6:
-            mnew = 7
-        if mnum == 7:
-            mnew = 6
-        
+            mnew = 1
         
         tnew_v = Getnumber(tnum)
         bnew_v = Getnumber(bnum)
-        
-        
         
         top_v = 'Top_' + str(tnew_v).zfill(2)
         mid_v = 'Mid_' + str(mnew).zfill(2)
@@ -148,7 +139,7 @@ def Variant(data):
     return variant
 
        
-dir = "../Parts/Full/"
+dir = "../Parts/Half/"
 top = fix("Tops/")
 mid = fix("Mids/")
 bot = fix("Bottoms/")  
@@ -214,7 +205,7 @@ line_top = []
 
 #loads in the known hive runes
 colnames = ['tops', 'mids', 'bots']
-data = pd.read_csv('../Hive_Rune_Database.csv', names=colnames)
+data = pd.read_csv('../Hive_Rune_Database_Half.csv', names=colnames)
 
 variant = Variant(data)
 
@@ -236,7 +227,7 @@ for i in range(len(top)):
                 print(top[i],mid[j],bot[k])
                 
                 if ((data['tops'] == top[i]) & (data['mids'] == mid[j]) & (data['bots'] == bot[k])).any() == True:
-                    save_dir = 'Full/Real/'
+                    save_dir = 'Half/Real/'
                     real = color_change(img,real = True)
                     cv2.imwrite( save_dir + save_name,real)
                     print("This rune is real")
@@ -260,7 +251,7 @@ for i in range(len(top)):
                     top[i] == 'Top_27' and mid[j] != 'Mid_04' or  
                     bot[k] == 'Bot_10' and mid[j] != 'Mid_04' or 
                     bot[k] == 'Bot_12' and mid[j] != 'Mid_04' or
-                    bot[k] == 'Bot_27' and mid[j] != 'Mid_04'     
+                    bot[k] == 'Bot_27' and mid[j] != 'Mid_04'
                     ):
                     print('This rune would break the rules')
                     continue
@@ -271,7 +262,7 @@ for i in range(len(top)):
                 if variant_search in variant:
                     print("This is a Variant Rune")
                     flip = color_change(img,flip=True)
-                    save_dir = 'Full/Variant/'
+                    save_dir = 'Half/Variant/'
                     cv2.imwrite( save_dir + save_name,flip)
                 
                 elif top[i] in real_top and mid[j] in real_mid and bot[k] in real_bot:
@@ -280,7 +271,7 @@ for i in range(len(top)):
                     else:
                         print("This is a Hypothetical Rune")
                         hypo = color_change(img,hypo=True)      
-                        save_dir = 'Full/Hypothetical/'
+                        save_dir = 'Half/Hypothetical/'
                         cv2.imwrite( save_dir + save_name,hypo)
             
                 #if this isn't in the database and the parts are fake
@@ -290,5 +281,5 @@ for i in range(len(top)):
                     else:
                         print("This is a Imaginary Rune")
                         imag = color_change(img,imag=True)      
-                        save_dir = 'Full/Imaginary/'
+                        save_dir = 'Half/Imaginary/'
                         cv2.imwrite( save_dir + save_name,imag)
