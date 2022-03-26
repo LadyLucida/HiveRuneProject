@@ -37,7 +37,7 @@ def color_change(im,real = False,flip = False,hypo = False,Imag = False):
     return im
 
 
-dir = "Parts/Full/"
+dir = "../Parts/Full/"
 top = os.listdir(dir + "Tops/")
 top = sorted(top)
 top_len = len(top) + 1

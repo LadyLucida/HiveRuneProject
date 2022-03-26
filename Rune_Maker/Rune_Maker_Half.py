@@ -145,62 +145,24 @@ mid = fix("Mids/")
 bot = fix("Bottoms/")  
 
 broken_top = [
-    'Top_13','Top_14','Top_15','Top_16','Top_17','Top_18','Top_19','Top_20','Top_21','Top_22',
-    'Top_23','Top_24','Top_28','Top_29','Top_33','Top_34','Top_35','Top_36','Top_37','Top_38',
-    'Top_39','Top_40','Top_41','Top_42','Top_43','Top_44','Top_45','Top_46','Top_47','Top_48',
-    'Top_49','Top_50','Top_51','Top_52','Top_53','Top_54','Top_55','Top_56','Top_60','Top_61',
-    'Top_62','Top_63','Top_64','Top_65','Top_66','Top_67','Top_69','Top_70','Top_71','Top_72',         
-    'Top_73','Top_74','Top_75','Top_76','Top_77','Top_78','Top_79','Top_80','Top_81',               
+    'Half_Top_02', 'Half_Top_08', 'Half_Top_09', 'Half_Top_11', 'Half_Top_14', 'Half_Top_16',
+    'Half_Top_17', 'Half_Top_18', 'Half_Top_19', 'Half_Top_20', 'Half_Top_21', 'Half_Top_22',
+    'Half_Top_23', 'Half_Top_27', 'Half_Top_33', 'Half_Top_34', 'Half_Top_36', 'Half_Top_38', 
+    'Half_Top_41', 'Half_Top_42', 'Half_Top_43', 'Half_Top_44', 'Half_Top_45', 'Half_Top_46',
+    'Half_Top_47'
 ]
                 
 broken_bot = [
-    'Bot_13','Bot_14','Bot_15','Bot_16','Bot_17','Bot_18','Bot_19','Bot_20','Bot_21','Bot_22',
-    'Bot_23','Bot_24','Bot_28','Bot_29','Bot_33','Bot_34','Bot_35','Bot_36','Bot_37','Bot_38',
-    'Bot_39','Bot_40','Bot_41','Bot_42','Bot_43','Bot_44','Bot_45','Bot_46','Bot_47','Bot_48',
-    'Bot_49','Bot_50','Bot_51','Bot_52','Bot_53','Bot_54','Bot_55','Bot_56','Bot_60','Bot_61',
-    'Bot_62','Bot_63','Bot_64','Bot_65','Bot_66','Bot_67','Bot_69','Bot_70','Bot_71','Bot_72',         
-    'Bot_73','Bot_74','Bot_75','Bot_76','Bot_77','Bot_78','Bot_79','Bot_80','Bot_81',               
-]
-                
-circle_top = [
-    'Top_04','Top_05','Top_17','Top_18','Top_19','Top_34','Top_38','Top_39','Top_40','Top_31',
-    'Top_44','Top_45','Top_58','Top_61','Top_65','Top_66','Top_67','Top_71','Top_72',
+    'Half_Bot_02', 'Half_Bot_08', 'Half_Bot_09', 'Half_Bot_11', 'Half_Bot_14', 'Half_Bot_16',
+    'Half_Bot_17', 'Half_Bot_18', 'Half_Bot_19', 'Half_Bot_20', 'Half_Bot_21', 'Half_Bot_22',
+    'Half_Bot_23', 'Half_Bot_27', 'Half_Bot_33', 'Half_Bot_34', 'Half_Bot_36', 'Half_Bot_38', 
+    'Half_Bot_41', 'Half_Bot_42', 'Half_Bot_43', 'Half_Bot_44', 'Half_Bot_45', 'Half_Bot_46',
+    'Half_Bot_47'
 ]
 
-circle_bot = [
-    'Bot_04','Bot_05','Bot_17','Bot_18','Bot_19','Bot_34','Bot_38','Bot_39','Bot_40','Bot_31',
-    'Bot_44','Bot_45','Bot_58','Bot_61','Bot_65','Bot_66','Bot_67','Bot_71','Bot_72',
-]      
-
-triangle_top = [
-    'Top_05','Top_08''Top_18','Top_19','Top_23','Top_24','Top_25','Top_38','Top_39','Top_40',
-    'Top_49','Top_50','Top_51','Top_65','Top_66','Top_67','Top_76','Top_77','Top_78',
-]
-
-triangle_bot = [
-    'Bot_05','Bot_08''Bot_18','Bot_19','Bot_23','Bot_24','Bot_25','Bot_38','Bot_39','Bot_40',
-    'Bot_49','Bot_50','Bot_51','Bot_65','Bot_66','Bot_67','Bot_76','Bot_77','Bot_78',
-]
-
-real_top = [
-    'Top_01','Top_02','Top_03','Top_04','Top_05','Top_06','Top_07','Top_08','Top_09','Top_10',
-    'Top_11','Top_12','Top_14','Top_26','Top_27','Top_28','Top_29','Top_30','Top_31','Top_32',
-    'Top_33','Top_34','Top_35','Top_55','Top_57','Top_58','Top_60','Top_61','Top_62'       
-]
-
-real_mid = ['Mid_01','Mid_02','Mid_03','Mid_04','Mid_05']
-
-real_bot = [
-    'Bot_01','Bot_02','Bot_03','Bot_04','Bot_05','Bot_06','Bot_07','Bot_08','Bot_09','Bot_10',
-    'Bot_11','Bot_14','Bot_23','Bot_26','Bot_27','Bot_33','Bot_35','Bot_55','Bot_57','Bot_59',
-    'Bot_61'  
-]
-
-dot_top = ['Top_06', 'Top_09', 'Top_27']
-
-dot_bot = ['Bot_06', 'Bot_09', 'Bot_27']
-
-line_top = []
+real_top = ['Half_Top_02','Half_Top_01']
+real_mid = ['Half_Mid_01','Half_Mid_02']
+real_bot = ['Half_Bot_01','Half_Bot_03']
 
 
 #loads in the known hive runes
@@ -237,24 +199,14 @@ for i in range(len(top)):
                     print("This rune would break the rules!")
                     continue
                 
-                if mid[j] == 'Mid_03' and top[i] not in circle_top and bot[k] not in circle_bot:
+                if mid[j] == 'Half_Mid_01' and i > 26 and k > 26:
                     print("This rune would break the rules!")
                     continue
                 
-                if top[i] == 'Top_26' and bot[k] not in triangle_bot or bot[k] == 'Bot_26' and top[i] not in triangle_top:
+                if mid[j] == 'Half_Mid_04' and i < 26 and k < 26:
                     print("This rune would break the rules!")
                     continue
                 
-                if (
-                    top[i] == 'Top_10' and mid[j] != 'Mid_04' or 
-                    top[i] == 'Top_12' and mid[j] != 'Mid_04' or
-                    top[i] == 'Top_27' and mid[j] != 'Mid_04' or  
-                    bot[k] == 'Bot_10' and mid[j] != 'Mid_04' or 
-                    bot[k] == 'Bot_12' and mid[j] != 'Mid_04' or
-                    bot[k] == 'Bot_27' and mid[j] != 'Mid_04'
-                    ):
-                    print('This rune would break the rules')
-                    continue
                 
                 #check to see if the rune is variant
                 variant_search = [top[i],mid[j],bot[k]]
@@ -266,20 +218,14 @@ for i in range(len(top)):
                     cv2.imwrite( save_dir + save_name,flip)
                 
                 elif top[i] in real_top and mid[j] in real_mid and bot[k] in real_bot:
-                    if mid[j] == 'Mid_02' or mid[j] == 'Mid_05':
-                        print("This one has the wonky middle")
-                    else:
-                        print("This is a Hypothetical Rune")
-                        hypo = color_change(img,hypo=True)      
-                        save_dir = 'Half/Hypothetical/'
-                        cv2.imwrite( save_dir + save_name,hypo)
+                    print("This is a Hypothetical Rune")
+                    hypo = color_change(img,hypo=True)      
+                    save_dir = 'Half/Hypothetical/'
+                    cv2.imwrite( save_dir + save_name,hypo)
             
                 #if this isn't in the database and the parts are fake
                 else:
-                    if mid[j] == 'Mid_02' or mid[j] == 'Mid_05':
-                        print("This one has the wonky middle")
-                    else:
-                        print("This is a Imaginary Rune")
-                        imag = color_change(img,imag=True)      
-                        save_dir = 'Half/Imaginary/'
-                        cv2.imwrite( save_dir + save_name,imag)
+                    print("This is a Imaginary Rune")
+                    imag = color_change(img,imag=True)      
+                    save_dir = 'Half/Imaginary/'
+                    cv2.imwrite( save_dir + save_name,imag)
