@@ -46,10 +46,10 @@ def color_change(im,real = False,flip = False,hypo = False,imag = False):
 
 def Getnumber(num):
 
-    if num <= 21:
-        new = num + 21
-    elif num >= 22:
-        new = num - 21
+    if num <= 20:
+        new = num + 20
+    elif num > 20:
+        new = num - 20
 
     print(num)
     print(new)
@@ -144,53 +144,60 @@ mid = fix("Mids/")
 bot = fix("Bottoms/")  
 
 broken_top = [
-    'Half_Top_02', 'Half_Top_08', 'Half_Top_09', 'Half_Top_11', 'Half_Top_14', 'Half_Top_16',
-    'Half_Top_17', 'Half_Top_18', 'Half_Top_19', 'Half_Top_20', 'Half_Top_21', 'Half_Top_22',
-    'Half_Top_23', 'Half_Top_27', 'Half_Top_33', 'Half_Top_34', 'Half_Top_36', 'Half_Top_38', 
-    'Half_Top_41', 'Half_Top_42', 'Half_Top_43', 'Half_Top_44', 'Half_Top_45', 'Half_Top_46',
-    'Half_Top_47'
+    'Half_Top_02', 'Half_Top_07', 'Half_Top_08', 'Half_Top_09', 'Half_Top_10', 'Half_Top_11',
+    'Half_Top_13', 'Half_Top_14', 'Half_Top_15', 'Half_Top_16', 'Half_Top_17', 'Half_Top_18',
+    'Half_Top_19', 'Half_Top_22', 'Half_Top_27', 'Half_Top_28', 'Half_Top_29', 'Half_Top_30', 
+    'Half_Top_31', 'Half_Top_33', 'Half_Top_34', 'Half_Top_35', 'Half_Top_36', 'Half_Top_37',
+    'Half_Top_38','Half_Top_39'
 ]
                 
 broken_bot = [
-    'Half_Bot_02', 'Half_Bot_08', 'Half_Bot_09', 'Half_Bot_11', 'Half_Bot_14', 'Half_Bot_16',
-    'Half_Bot_17', 'Half_Bot_18', 'Half_Bot_19', 'Half_Bot_20', 'Half_Bot_21', 'Half_Bot_22',
-    'Half_Bot_23', 'Half_Bot_27', 'Half_Bot_33', 'Half_Bot_34', 'Half_Bot_36', 'Half_Bot_38', 
-    'Half_Bot_41', 'Half_Bot_42', 'Half_Bot_43', 'Half_Bot_44', 'Half_Bot_45', 'Half_Bot_46',
-    'Half_Bot_47'
+    'Half_Bot_02', 'Half_Bot_07', 'Half_Bot_08', 'Half_Bot_09', 'Half_Bot_10', 'Half_Bot_11',
+    'Half_Bot_13', 'Half_Bot_14', 'Half_Bot_15', 'Half_Bot_16', 'Half_Bot_17', 'Half_Bot_18',
+    'Half_Bot_19', 'Half_Bot_22', 'Half_Bot_27', 'Half_Bot_28', 'Half_Bot_29', 'Half_Bot_30', 
+    'Half_Bot_31', 'Half_Bot_33', 'Half_Bot_34', 'Half_Bot_35', 'Half_Bot_36', 'Half_Bot_37',
+    'Half_Bot_38', 'Half_Bot_39'
 ]
 
 left_top = [
     'Half_Top_01', 'Half_Top_02', 'Half_Top_03', 'Half_Top_04', 'Half_Top_05', 'Half_Top_06',
     'Half_Top_07', 'Half_Top_08', 'Half_Top_09', 'Half_Top_10', 'Half_Top_11', 'Half_Top_12',
     'Half_Top_13', 'Half_Top_14', 'Half_Top_15', 'Half_Top_16', 'Half_Top_17', 'Half_Top_18', 
-    'Half_Top_19', 'Half_Top_20', 'Half_Top_21', 'Half_Top_22', 'Half_Top_23', 'Half_Top_24',
-    'Half_Top_25'
+    'Half_Top_19', 'Half_Top_20',
 ]
 
 left_bot = [
     'Half_Bot_01', 'Half_Bot_02', 'Half_Bot_03', 'Half_Bot_04', 'Half_Bot_05', 'Half_Bot_06',
     'Half_Bot_07', 'Half_Bot_08', 'Half_Bot_09', 'Half_Bot_10', 'Half_Bot_11', 'Half_Bot_12',
     'Half_Bot_13', 'Half_Bot_14', 'Half_Bot_15', 'Half_Bot_16', 'Half_Bot_17', 'Half_Bot_18', 
-    'Half_Bot_19', 'Half_Bot_20', 'Half_Bot_21', 'Half_Bot_22', 'Half_Bot_23', 'Half_Bot_24',
-    'Half_Bot_25'
+    'Half_Bot_19', 'Half_Bot_20',
 ]
 
 right_top = [
-    'Half_Top_26', 'Half_Top_27', 'Half_Top_28', 'Half_Top_29', 'Half_Top_30', 'Half_Top_31',
-    'Half_Top_32', 'Half_Top_33', 'Half_Top_34', 'Half_Top_35', 'Half_Top_36', 'Half_Top_37',
-    'Half_Top_38', 'Half_Top_39', 'Half_Top_40', 'Half_Top_41', 'Half_Top_42', 'Half_Top_43', 
-    'Half_Top_44', 'Half_Top_45', 'Half_Top_46', 'Half_Top_47', 'Half_Top_48', 'Half_Top_49',
-    'Half_Top_50'
+    'Half_Top_21', 'Half_Top_22', 'Half_Top_23', 'Half_Top_24', 'Half_Top_25', 'Half_Top_26',
+    'Half_Top_27', 'Half_Top_28', 'Half_Top_29', 'Half_Top_30', 'Half_Top_31', 'Half_Top_32',
+    'Half_Top_33', 'Half_Top_34', 'Half_Top_35', 'Half_Top_36', 'Half_Top_37', 'Half_Top_38', 
+    'Half_Top_39', 'Half_Top_40',
 ]
 
 right_bot = [
-    'Half_Bot_26', 'Half_Bot_27', 'Half_Bot_28', 'Half_Bot_29', 'Half_Bot_30', 'Half_Bot_31',
-    'Half_Bot_32', 'Half_Bot_33', 'Half_Bot_34', 'Half_Bot_35', 'Half_Bot_36', 'Half_Bot_37',
-    'Half_Bot_38', 'Half_Bot_39', 'Half_Bot_40', 'Half_Bot_41', 'Half_Bot_42', 'Half_Bot_43', 
-    'Half_Bot_44', 'Half_Bot_45', 'Half_Bot_46', 'Half_Bot_47', 'Half_Bot_48', 'Half_Bot_49',
-    'Half_Bot_50'
+    'Half_Bot_21', 'Half_Bot_22', 'Half_Bot_23', 'Half_Bot_24', 'Half_Bot_25', 'Half_Bot_26',
+    'Half_Bot_27', 'Half_Bot_28', 'Half_Bot_29', 'Half_Bot_30', 'Half_Bot_31', 'Half_Bot_32',
+    'Half_Bot_33', 'Half_Bot_34', 'Half_Bot_35', 'Half_Bot_36', 'Half_Bot_37', 'Half_Bot_38', 
+    'Half_Bot_39', 'Half_Bot_40',
 
 ]
+
+dot_top = [
+    'Half_Top_06','Half_Top_07', 'Half_Top_08', 'Half_Top_09', 'Half_Top_12', 'Half_Top_16',
+    'Half_Top_26','Half_Top_27', 'Half_Top_28', 'Half_Top_29', 'Half_Top_32', 'Half_Top_36', 
+]
+
+dot_bot = [
+    'Half_Bot_06','Half_Bot_07', 'Half_Bot_08', 'Half_Bot_09', 'Half_Bot_12', 'Half_Bot_16',
+    'Half_Bot_26','Half_Bot_27', 'Half_Bot_28', 'Half_Bot_29', 'Half_Bot_32', 'Half_Bot_36', 
+]
+
 
 
 
@@ -245,10 +252,19 @@ for i in range(len(top)):
                     print("This rune would break the rules!")
                     continue
                 
-                if mid[j] == 'Half_Mid_04' and (top[i] not in right_top or bot[k] not in right_bot):
+                if mid[j] == 'Half_Mid_03' and (top[i] not in right_top or bot[k] not in right_bot):
                     print("This rune would break the rules!")
                     continue
                 
+                if mid[j] == 'Half_Mid_01' and top[i] in dot_top or bot[k] in dot_bot:
+                    print("This rune would break the rules!")
+                    continue
+
+                if mid[j] == 'Half_Mid_03' and top[i] in dot_top or bot[k] in dot_bot:
+                    print("This rune would break the rules!")
+                    continue
+
+
                 
                 #check to see if the rune is variant
                 variant_search = [top[i],mid[j],bot[k]]
