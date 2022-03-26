@@ -131,10 +131,15 @@ Rune_Maker/Full/Hypothetical/*.png
 Rune_Maker/Full/Imaginary/*.png
 Rune_Maker/Full/Real/*.png
 Rune_Maker/Full/Variant/*.png
+
 Rune_Maker/Half/Hypothetical/*.png
 Rune_Maker/Half/Imaginary/*.png
 Rune_Maker/Half/Real/*.png
 Rune_Maker/Half/Variant/*.png
+
+Rune_Maker/Numbers/Imaginary/*.png
+Rune_Maker/Numbers/Real/*.png
+Rune_Maker/Numbers/Variant/*.png
 
 Parts/Full/Data
 Parts/Full/3x
