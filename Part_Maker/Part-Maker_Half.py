@@ -72,7 +72,7 @@ for i,value in enumerate(top, start = 0):
     save_name = dir + "Bottoms/" + bot_name + ".png"
     cv2.imwrite(save_name,bot)
 
-    flip_num = num[i] + 25
+    flip_num = num[i] + 21
     print(flip_num)
     top = cv2.flip(im, 1)
 

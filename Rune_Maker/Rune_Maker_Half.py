@@ -46,12 +46,13 @@ def color_change(im,real = False,flip = False,hypo = False,imag = False):
 
 def Getnumber(num):
 
-    if num <= 27:
-        new = num
-    elif num > 54:
-        new = num - 27
-    elif num <= 54 and num >= 28:
-        new = num + 27
+    if num <= 21:
+        new = num + 21
+    elif num >= 22:
+        new = num - 21
+
+    print(num)
+    print(new)
     
     return new
     
@@ -72,20 +73,18 @@ def Variant(data):
         bnum = int(bot.rpartition('_')[-1])
         
         if mnum == 1:
-            mnew = 4
+            mnew = 3
         if mnum == 2:
             mnew = 2
         if mnum == 3:
-            mnew = 3
-        if mnum == 4:
             mnew = 1
         
         tnew_v = Getnumber(tnum)
         bnew_v = Getnumber(bnum)
         
-        top_v = 'Top_' + str(tnew_v).zfill(2)
-        mid_v = 'Mid_' + str(mnew).zfill(2)
-        bot_v = 'Bot_' + str(bnew_v).zfill(2)
+        top_v = 'Half_Top_' + str(tnew_v).zfill(2)
+        mid_v = 'Half_Mid_' + str(mnew).zfill(2)
+        bot_v = 'Half_Bot_' + str(bnew_v).zfill(2)
         
         
         
@@ -101,9 +100,9 @@ def Variant(data):
         tnew_h = bnum
         bnew_h = tnum
           
-        top_h = 'Top_' + str(tnew_h).zfill(2)
-        mid_h = 'Mid_' + str(mnew).zfill(2)
-        bot_h = 'Bot_' + str(bnew_h).zfill(2)
+        top_h = 'Half_Top_' + str(tnew_h).zfill(2)
+        mid_h = 'Half_Mid_' + str(mnew).zfill(2)
+        bot_h = 'Half_Bot_' + str(bnew_h).zfill(2)
 
         print("Horizontal Variant:",[top_h,mid_h,bot_h])
         if ((data['tops'] == top_h) & (data['mids'] == mid_h) & (data['bots'] == bot_h)).any() == True:
@@ -119,9 +118,9 @@ def Variant(data):
         bnew_vh = Getnumber(bnew_h)
         mnew_vh = mnum
         
-        top_vh = 'Top_' + str(tnew_vh).zfill(2)
-        mid_vh = 'Mid_' + str(mnew_vh).zfill(2)
-        bot_vh = 'Bot_' + str(bnew_vh).zfill(2)
+        top_vh = 'Half_Top_' + str(tnew_vh).zfill(2)
+        mid_vh = 'Half_Mid_' + str(mnew_vh).zfill(2)
+        bot_vh = 'Half_Bot_' + str(bnew_vh).zfill(2)
         
        
         print("Vertical + Horizontal Variant:",[top_vh,mid_vh,bot_vh])
@@ -160,6 +159,41 @@ broken_bot = [
     'Half_Bot_47'
 ]
 
+left_top = [
+    'Half_Top_01', 'Half_Top_02', 'Half_Top_03', 'Half_Top_04', 'Half_Top_05', 'Half_Top_06',
+    'Half_Top_07', 'Half_Top_08', 'Half_Top_09', 'Half_Top_10', 'Half_Top_11', 'Half_Top_12',
+    'Half_Top_13', 'Half_Top_14', 'Half_Top_15', 'Half_Top_16', 'Half_Top_17', 'Half_Top_18', 
+    'Half_Top_19', 'Half_Top_20', 'Half_Top_21', 'Half_Top_22', 'Half_Top_23', 'Half_Top_24',
+    'Half_Top_25'
+]
+
+left_bot = [
+    'Half_Bot_01', 'Half_Bot_02', 'Half_Bot_03', 'Half_Bot_04', 'Half_Bot_05', 'Half_Bot_06',
+    'Half_Bot_07', 'Half_Bot_08', 'Half_Bot_09', 'Half_Bot_10', 'Half_Bot_11', 'Half_Bot_12',
+    'Half_Bot_13', 'Half_Bot_14', 'Half_Bot_15', 'Half_Bot_16', 'Half_Bot_17', 'Half_Bot_18', 
+    'Half_Bot_19', 'Half_Bot_20', 'Half_Bot_21', 'Half_Bot_22', 'Half_Bot_23', 'Half_Bot_24',
+    'Half_Bot_25'
+]
+
+right_top = [
+    'Half_Top_26', 'Half_Top_27', 'Half_Top_28', 'Half_Top_29', 'Half_Top_30', 'Half_Top_31',
+    'Half_Top_32', 'Half_Top_33', 'Half_Top_34', 'Half_Top_35', 'Half_Top_36', 'Half_Top_37',
+    'Half_Top_38', 'Half_Top_39', 'Half_Top_40', 'Half_Top_41', 'Half_Top_42', 'Half_Top_43', 
+    'Half_Top_44', 'Half_Top_45', 'Half_Top_46', 'Half_Top_47', 'Half_Top_48', 'Half_Top_49',
+    'Half_Top_50'
+]
+
+right_bot = [
+    'Half_Bot_26', 'Half_Bot_27', 'Half_Bot_28', 'Half_Bot_29', 'Half_Bot_30', 'Half_Bot_31',
+    'Half_Bot_32', 'Half_Bot_33', 'Half_Bot_34', 'Half_Bot_35', 'Half_Bot_36', 'Half_Bot_37',
+    'Half_Bot_38', 'Half_Bot_39', 'Half_Bot_40', 'Half_Bot_41', 'Half_Bot_42', 'Half_Bot_43', 
+    'Half_Bot_44', 'Half_Bot_45', 'Half_Bot_46', 'Half_Bot_47', 'Half_Bot_48', 'Half_Bot_49',
+    'Half_Bot_50'
+
+]
+
+
+
 real_top = ['Half_Top_02','Half_Top_01']
 real_mid = ['Half_Mid_01','Half_Mid_02']
 real_bot = ['Half_Bot_01','Half_Bot_03']
@@ -187,7 +221,7 @@ for i in range(len(top)):
                 #if this is in the database it shouldn't be saved
                 
                 print(top[i],mid[j],bot[k])
-                
+
                 if ((data['tops'] == top[i]) & (data['mids'] == mid[j]) & (data['bots'] == bot[k])).any() == True:
                     save_dir = 'Half/Real/'
                     real = color_change(img,real = True)
@@ -199,11 +233,19 @@ for i in range(len(top)):
                     print("This rune would break the rules!")
                     continue
                 
-                if mid[j] == 'Half_Mid_01' and i > 26 and k > 26:
+                if top[i] in left_top and bot[k] not in left_bot:
+                    print("This rune would break the rules!")
+                    continue
+
+                if top[i] in right_top and bot[k] not in right_bot:
+                    print("This rune would break the rules!")
+                    continue
+
+                if mid[j] == 'Half_Mid_01' and (top[i] not in left_top or bot[k] not in left_bot):
                     print("This rune would break the rules!")
                     continue
                 
-                if mid[j] == 'Half_Mid_04' and i < 26 and k < 26:
+                if mid[j] == 'Half_Mid_04' and (top[i] not in right_top or bot[k] not in right_bot):
                     print("This rune would break the rules!")
                     continue
                 
